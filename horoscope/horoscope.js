@@ -31,7 +31,7 @@ a= $('div:nth-child(1)').text();
 b=''
 for(i=a.search(':')+2;i<a.length;i++){b=b+a[i]} 
 ScribeSpeak('pour les '+signe+' ; '+b,true) 
-//SARAH.run('mathildedico', { 'phrase' : b})		
+//SARAH.run		
 callback({'tts' : " "});
 return false
 })//fin request
