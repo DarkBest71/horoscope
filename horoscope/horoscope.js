@@ -5,7 +5,7 @@ phrasehoroscope=JSON.stringify(SARAH.context.scribe.lastReco);phrasehoroscope=JS
 
 //phrasehoroscope=data.phrasehoroscope.toLowerCase();
 console.log('on a recu horoscope'+phrasehoroscope)
-config = config.modules.horoscopemathilde; signe = config.signe.toLowerCase();//default
+config = config.modules.horoscope; signe = config.signe.toLowerCase();//default
 function signes(phrasehoroscope,signe){
 if (phrasehoroscope.search('cancer')>-1){signe='cancer'}
 if (phrasehoroscope.search('lion')>-1){signe='lion'}
@@ -37,4 +37,4 @@ return false
 })//fin request
 }//fin fnct scrap
 signes(phrasehoroscope,signe)
-} 
+}  
