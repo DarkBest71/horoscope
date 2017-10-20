@@ -23,4 +23,8 @@ exports.action = function(data, callback, config, SARAH){
 	callback({ 'tts': horoscope});
   
   });
+else {
+	callback({'tts': txt});
+	}
 }
+exports.action = action;
