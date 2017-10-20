@@ -1,0 +1,22 @@
+<grammar version="1.0" xml:lang="fr-FR" mode="voice" root="rulehoroscope" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
+  <rule id="rulehoroscope" scope="public">
+	<example>quel est mon horoscope ?</example>
+    <tag>out.action=new Object(); </tag>
+    
+    <item weight="2">Sarah</item>
+    
+    <one-of> 
+	  <item>horoscope</item>
+	  <item>quel é mon horoscope</item>
+	  <item>Donne mon horoscope</item>
+	  <item>Donne moi mon horoscope</item>
+	  <item>Di mon horoscope</item>
+	  <item>Di moi mon horoscope</item>
+	  <item>Balance moi mon horoscope</item>
+	  <item>Balance mon horoscope</item>
+	  <item>quel est mon avenir</item>
+	  <item>que va t'il m'arriver aujourd'hui</item>
+    </one-of>
+    <tag>out.action._attributes.uri="http://127.0.0.1:8080/sarah/horoscope";</tag>
+  </rule> 
+</grammar>
