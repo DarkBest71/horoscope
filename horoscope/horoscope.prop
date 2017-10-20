@@ -1,9 +1,9 @@
 {
-  "modules" : { 
-    "horoscope"  : {
-      "description": "Donne l'horoscope du jour",
-      "version"    : "1.0",
-	  "signe"	: "[sagittaire]"
+  "modules": { 
+    "horoscope": {
+      "description": "Plugin pour l'horoscope",
+      "version": "3.16",
+      "signe"	: "sagittaire"
     }
   }
 }
