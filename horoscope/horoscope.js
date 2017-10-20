@@ -1,4 +1,4 @@
-var action = function(data, callback, config, SARAH){ 
+exports.action = function(data, callback, config, SARAH){
 
  // CONFIG
   config = config.modules.horoscope;
@@ -20,7 +20,7 @@ var action = function(data, callback, config, SARAH){
     }
     var $ = require('cheerio').load(body, { xmlMode: true, ignoreWhitespace: false, lowerCaseTags: false });
    	var horoscope = $('html.no-js body div.mn-doc div#ctn_global div#ctn_middle div#ctn_content_00.float_left div#ctn_horoscope_jour.ctn_horoscope p.ctn_categorie').text() ;
-	callback({ 'tts': txt});
+	callback({ 'tts': horoscope});
   
   });
 }
