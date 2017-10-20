@@ -1,4 +1,4 @@
-﻿exports.action = function(data, callback, config, SARAH){
+exports.action = function(data, callback, config, SARAH){
 
  // CONFIG
   config = config.modules.horoscope;
@@ -10,6 +10,7 @@
   
   var signe = config.signe;
   var url = 'http://horoscope.20minutes.fr/horoscope-jour-'+signe;
+  
   var request = require('request');
   request({ 'uri' : url }, function (err, response, body){
     
@@ -17,25 +18,9 @@
       callback({'tts': "Je n'arrive pas à prédire ton avenir"});
       return;
     }
-		
-		var $ = require('cheerio').load(body, { xmlMode: true, ignoreWhitespace: false, lowerCaseTags: false });
-		txt  = getRandomVdm($);
-		console.log(txt);
-		callback({'tts': txt});
-		return;
+    var $ = require('cheerio').load(body, { xmlMode: true, ignoreWhitespace: false, lowerCaseTags: false });
+   	var horoscope = $('html.no-js body div.mn-doc div#ctn_global div#ctn_middle div#ctn_content_00.float_left div#ctn_horoscope_jour.ctn_horoscope p.ctn_categorie').text() ;
+	callback({ 'tts': horoscope});
   
   });
-}else {
-	callback({'tts': txt});
-}
-exports.action = action;
-
-  // ------------------------------------------
-  //  SCRAPING
-  // ------------------------------------------
-
-var getRandomVdm = function($){
-  vdm = $('p.block').first().find('a').text();
-  // On remplace le VDM pour la lecture
-  return vdm.replace(/vdm/gi, ", horoscope.");
 }
