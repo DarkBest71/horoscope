@@ -9,7 +9,7 @@ exports.action = function(data, callback, config, SARAH){
   }
   
   var signe = config.signe;
-  var url = 'http://horoscope.20minutes.fr/horoscope-jour-'+signe;
+  var url = 'http://www.horoscope-gratuit.org/horoscope-'+signe+'.php';
   
   var request = require('request');
   request({ 'uri' : url }, function (err, response, body){
@@ -22,5 +22,5 @@ exports.action = function(data, callback, config, SARAH){
    	var horoscope = $('html.no-js body div.mn-doc div#ctn_global div#ctn_middle div#ctn_content_00.float_left div#ctn_horoscope_jour.ctn_horoscope p.ctn_categorie').text() ;
 	callback({ 'tts': horoscope});
   
-  
-}});
+  });
+}
